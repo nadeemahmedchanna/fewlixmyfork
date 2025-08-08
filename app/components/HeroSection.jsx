@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Paragraph from './ui/Paragraph';
+import Avtars from './Avtars';
+import Button from './ui/Button';
+import Statics from './Statics';
 
 const words = [
   "Clarity.",
@@ -45,7 +48,7 @@ const HeroSection = () => {
   const currentWord = isClient ? words[index] : words[0];
 
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-16 bg-white">
+    <section className="w-full min-h-screen flex flex-col md:flex-row justify-between px-6 md:px-20 py-16 bg-white">
       {/* Text Section */}
       <div className="flex-1 mb-10 md:mb-0">
         <h1 className="text-4xl md:text-6xl leading-tight text-gray-900">
@@ -92,21 +95,31 @@ const HeroSection = () => {
           </span>
         </h1>
         <Paragraph>
-            We transform ideas and brands into visual stories that drive real growth, no fluff, just impactful design that delivers results.
+          We transform ideas and brands into visual stories that drive real growth, no fluff, just impactful design that delivers results.
         </Paragraph>
-        <button className="mt-8 px-6 py-3 bg-black text-white text-lg rounded-xl shadow-md hover:bg-gray-800 transition">
-          Get Started
-        </button>
+
+        <div className='flex gap-4 flex-wrap py-4'>
+          <Avtars />
+          <Button text={"Contact Us"} />
+        </div>
+
+        <Paragraph>
+          Trusted by 150+ businesses 
+        </Paragraph>
+
+        <Statics />
       </div>
 
       {/* Image Section */}
-      <div className="flex-1 w-full max-w-[400px] aspect-square relative">
-        <Image
-          src="/hero-image.jpg" // Replace with your own image in /public
-          alt="Hero"
-          fill
-          className="object-cover rounded-2xl shadow-xl"
-        />
+      <div className="flex-2 flex w-full md:max-w-1/2 aspect-square">
+
+          <Image
+            src="/graphic designer working.gif" // Replace with your own image in /public
+            alt="Hero"
+            width={720}
+            height={720}
+            className="object-cover rounded-2xl"
+          />
       </div>
     </section>
   );

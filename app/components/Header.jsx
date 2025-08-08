@@ -20,14 +20,13 @@ export default function Header() {
 
   // Helper to check if link is active
   const isActive = (href) => {
-    // Exact match or root homepage special case
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
   return (
     <>
-      <header className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 my-4">
+      <header className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 my-4 relative">
         <div className="mx-auto max-w-7xl">
           <div className="bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border border-gray-200 rounded-full shadow-sm">
             <div className="flex h-16 items-center justify-between px-6">
@@ -65,7 +64,7 @@ export default function Header() {
               {/* Desktop Contact Button */}
               <div className="hidden md:flex items-center space-x-4 group">
                 <Link
-                href={"/contact"}
+                  href={"/contact"}
                   variant="outline"
                   className="rounded-full border-gray-300 border-2 text-gray-700 bg-transparent px-4 py-2"
                 >
@@ -93,47 +92,48 @@ export default function Header() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu Dropdown with animation */}
+        <div
+          className={`md:hidden absolute left-0 right-0 transition-[max-height,opacity] duration-500 ease-in-out ${
+            isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          } bg-white border border-gray-200 rounded-b-lg shadow-lg mx-4 sm:mx-6 lg:mx-8`}
+          style={{ top: "100%" }}
+        >
+          <nav className="flex flex-col space-y-4 p-6">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-4 py-3 text-lg font-medium rounded-full transition-colors text-center ${
+                  isActive(item.href)
+                    ? "bg-green-400 text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            {/* Mobile Contact Section */}
+            <div className="pt-6 border-t flex items-center justify-center space-x-3">
+              <Link
+                href={"/contact"}
+                className="rounded-full border-gray-300 border-2 text-gray-700 bg-transparent px-4 py-2 flex-1 text-center"
+              >
+                Contact Us
+              </Link>
+              <button
+                size="icon"
+                className="rounded-full bg-green-400 hover:bg-green-500 text-black p-4 rotate-[-45deg] transition-transform"
+              >
+                <ArrowRight className="h-4 w-4 font-extrabold" />
+              </button>
+            </div>
+          </nav>
+        </div>
       </header>
-
-      {/* Mobile Menu Dropdown with animation */}
-      <div
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        } bg-white border border-gray-200 rounded-b-lg shadow-lg mx-4 sm:mx-6 lg:mx-8`}
-      >
-        <nav className="flex flex-col space-y-4 p-6">
-          {navigationItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className={`block px-4 py-3 text-lg font-medium rounded-full transition-colors text-center ${
-                isActive(item.href)
-                  ? "bg-green-400 text-white"
-                  : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-
-          {/* Mobile Contact Section */}
-          <div className="pt-6 border-t flex items-center justify-center space-x-3">
-            <button
-              variant="outline"
-              className="rounded-full border-gray-300 text-gray-700 hover:bg-gray-50 flex-1 bg-transparent"
-            >
-              Contact Us
-            </button>
-            <button
-              size="icon"
-              className="rounded-full bg-brand-green hover   text-white"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
-        </nav>
-      </div>
     </>
   );
 }
