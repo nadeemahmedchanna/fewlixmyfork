@@ -42,7 +42,7 @@ export default function CursorFollower() {
 
   return (
     <div
-      className="fixed w-3 h-3 bg-green-400 rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_4px_rgba(34,197,94,0.7)]"
+      className="hidden md:block fixed w-3 h-3 bg-green-400 rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_4px_rgba(34,197,94,0.7)]"
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
       }}

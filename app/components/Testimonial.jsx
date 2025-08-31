@@ -71,13 +71,11 @@ const testimonials = [
   }
 ]
 
-
 const clientImages = [
-  "/placeholder.svg?height=50&width=50",
-  "/placeholder.svg?height=50&width=50", 
-  "/placeholder.svg?height=50&width=50",
-  "/placeholder.svg?height=50&width=50",
-  "/placeholder.svg?height=50&width=50"
+  "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80", 
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 ]
 
 export default function TestimonialsShowcase() {
@@ -94,11 +92,10 @@ export default function TestimonialsShowcase() {
   const nextSlide = () => setCurrentIndex(prev => (prev + 1) % testimonials.length)
   const prevSlide = () => setCurrentIndex(prev => (prev - 1 + testimonials.length) % testimonials.length)
 
-  // Constants for card width and gap (in px)
+  // Card width and gap
   const cardWidth = 400
-  const gapPx = 24 // corresponds to gap-6 (1.5rem)
+  const gapPx = 24
 
-  // Calculate widths for motion container animation
   const totalCards = testimonials.length * 2
   const totalWidthPx = totalCards * cardWidth + (totalCards - 1) * gapPx
   const slideWidthPx = testimonials.length * cardWidth + (testimonials.length - 1) * gapPx
@@ -114,16 +111,16 @@ export default function TestimonialsShowcase() {
             <span className="text-sm font-medium text-gray-700">Customer Stories</span>
             <div className="w-2 h-2 bg-black rounded-full"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-tight">
             More Impactful Projects Delivered
             <br />
             Than Other Agencies Have Clients.
           </h2>
         </div>
 
-        {/* Desktop: continuous slow scroll */}
+        {/* Desktop Scroll */}
         {!isMobile ? (
-          <div className="overflow-hidden mb-8">
+          <div className="mb-8 relative px-6 overflow-x-hidden">
             <motion.div
               className="flex gap-6"
               style={{ width: `${totalWidthPx}px` }}
@@ -134,19 +131,22 @@ export default function TestimonialsShowcase() {
                 <div
                   key={index}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 flex-shrink-0"
-                  style={{ width: `${cardWidth}px`, aspectRatio: "16 / 9" }}
+                  style={{ width: `${cardWidth}px` }}
                 >
-                  <div className="p-6 flex flex-col justify-between h-full">
+                  <div className="p-6 flex flex-col justify-between h-auto">
                     <div>
                       <div className="flex gap-1 mb-4">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 fill-green-400 text-green-400" />
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-green-400 text-green-400"
+                          />
                         ))}
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
                         {testimonial.title}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed break-words">
                         "{testimonial.quote}"
                       </p>
                     </div>
@@ -160,12 +160,12 @@ export default function TestimonialsShowcase() {
             </motion.div>
           </div>
         ) : (
-          // Mobile: manual navigation with animation
+          /* Mobile */
           <div className="mb-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 aspect-video flex flex-col justify-between p-6"
+                className="bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between p-6 h-auto"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
@@ -174,13 +174,16 @@ export default function TestimonialsShowcase() {
                 <div>
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-green-400 text-green-400" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-green-400 text-green-400"
+                      />
                     ))}
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {testimonials[currentIndex].title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed break-words">
                     "{testimonials[currentIndex].quote}"
                   </p>
                 </div>
@@ -208,7 +211,7 @@ export default function TestimonialsShowcase() {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex -space-x-2">
               {clientImages.map((src, index) => (
                 <div key={index} className="relative">
@@ -217,12 +220,12 @@ export default function TestimonialsShowcase() {
                     alt={`Client ${index + 1}`}
                     width={50}
                     height={50}
-                    className="rounded-full border-2 border-white object-cover"
+                    className="rounded-full aspect-square border-2 border-white object-cover"
                   />
                 </div>
               ))}
             </div>
-            <span className="text-lg font-semibold text-gray-900">
+            <span className="md:text-lg font-semibold text-gray-900">
               300+ happy clients shared stories
             </span>
           </div>

@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Statics() {
@@ -8,7 +9,7 @@ export default function Statics() {
   // target numbers
   const targets = { a: 700, b: 1000, c: 80 };
 
-  // generic easing functions
+  // easing functions
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
   const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
@@ -84,12 +85,12 @@ export default function Statics() {
   return (
     <section
       ref={containerRef}
-      className="w-full flex justify-center bg-gray-100 rounded-lg"
+      className="w-full flex justify-center bg-gray-100 rounded-lg md:my-0 my-10"
     >
-      <div className="max-w-4xl w-full grid grid-cols-3 gap-3 sm:gap-6 p-4 sm:p-6">
+      <div className="max-w-4xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6">
         {/* Card 1 */}
-        <div className="rounded-2xl p-6 text-center">
-          <div className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+        <div className="rounded-2xl p-6 text-center bg-white shadow">
+          <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             <span>{formatNumber(values.a)}</span>
             <span className="ml-1 text-sm sm:text-base md:text-xl align-top">M+</span>
           </div>
@@ -97,8 +98,8 @@ export default function Statics() {
         </div>
 
         {/* Card 2 */}
-        <div className="rounded-2xl p-6 text-center">
-          <div className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+        <div className="rounded-2xl p-6 text-center bg-white shadow">
+          <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             <span>{formatNumber(values.b)}</span>
             <span className="ml-1 text-sm sm:text-base md:text-xl align-top">+</span>
           </div>
@@ -106,8 +107,8 @@ export default function Statics() {
         </div>
 
         {/* Card 3 */}
-        <div className="rounded-2xl p-6 text-center">
-          <div className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+        <div className="rounded-2xl p-6 text-center bg-white shadow">
+          <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             <span>{formatNumber(values.c)}</span>
             <span className="ml-1 text-sm sm:text-base md:text-xl align-top">+</span>
           </div>

@@ -75,11 +75,11 @@ export default function ServicesSection() {
       <div className="container mx-auto px-6 py-20">
         {/* Header */}
         <div className="mb-16 flex flex-col md:flex-row gap-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
           Graphics for Businesses That Value
 <span className="block">Purpose, Not Just Pixels.</span>
           </h2>
-          <p className={`text-lg max-w-md transition-colors duration-500 ${
+          <p className={`text-[1rem] max-w-md transition-colors duration-500 ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
 From bold branding to scroll-stopping graphics, we help your business stand out, stay memorable, and drive results.
