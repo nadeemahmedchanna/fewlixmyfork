@@ -6,8 +6,8 @@ const Button = ({ onClick = () => {}, text, link = "#" }) => {
     <span
       className="
         relative overflow-hidden
-        px-6 py-2 rounded-full
-        border border-black text-black
+        px-10 py-4 rounded-full
+        border border-black text-black text-lg
         transition-transform duration-300
         hover:-translate-y-1
         group inline-block
