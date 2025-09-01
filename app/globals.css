@@ -35,3 +35,22 @@ body {
 .animate-marquee-reverse {
   animation: marquee-reverse 30s linear infinite;
 }
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
+  @keyframes draw-chalk {
+    0% { stroke-dashoffset: 400; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 400; }
+  }
+  .animate-marquee { animation: marquee var(--duration) linear infinite; }
+  .animate-marquee-reverse { animation: marquee-reverse var(--duration) linear infinite; }
+  .animate-draw-chalk { animation: draw-chalk 3s linear infinite; }
+}

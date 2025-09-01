@@ -1,73 +1,70 @@
-"use client";
+  "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+  import * as React from "react";
 
-const logos = [
-  "/logos/vitalis.png",
-  "/logos/coolandcool.png",
-  "/logos/healingshilajit.png",
-  "/logos/glowzi.png",
-  "/logos/eushbi.png",
-  "/logos/pakshilajit.png",
-  "/logos/mamaminies.png",
-  "/logos/linearpharma.png",
-  "/logos/honeyx.png",
-  "/logos/urapra.png",
-  "/logos/dopamean.png",
-  "/logos/ruralgallery.png",
-  "/logos/hometrends.png",
-  "/logos/snuggles.png",
-];
+  export function Marquee({
+    pauseOnHover = false,
+    direction = "left",
+    speed = 20,
+    className = "",
+    ...props
+  }) {
+    const marqueeRef = React.useRef(null);
+    const [visible, setVisible] = React.useState(false);
 
-const LogoMarquee = () => {
-  return (
-    <div className="w-full bg-white py-8 overflow-hidden">
-      {/* TOP ROW */}
-      <motion.div
-        className="flex gap-6 mb-6"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+    const clientLogos = [
+      "/clients/1.svg",
+      "/clients/2.svg",
+      "/clients/3.svg",
+      "/clients/4.svg",
+      "/clients/5.svg",
+      "/clients/6.svg",
+    ];
+
+    const marqueeClasses = [
+      "flex items-center whitespace-nowrap",
+      pauseOnHover ? "hover:[animation-play-state:paused]" : "",
+      direction === "right" ? "animate-marquee-reverse" : "animate-marquee",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    React.useEffect(() => {
+      if (!marqueeRef.current) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setVisible(true);
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(marqueeRef.current);
+      return () => observer.disconnect();
+    }, []);
+
+    return (
+      <div
+        ref={marqueeRef}
+        className={`w-full py-20 sm:py-52 bg-[#f1faee] z-10 relative ${className}`}
+        {...props}
       >
-        {[...logos, ...logos].map((src, i) => (
-          <div
-            key={i}
-            className="flex-shrink-0 bg-gray-200 rounded-lg w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition"
-          >
-            <Image
-              src={src}
-              alt={`logo-${i}`}
-              width={128}
-              height={80}
-              className="object-contain mix-blend-multiply"
-            />
-          </div>
-        ))}
-      </motion.div>
+        <div className="relative text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold relative inline-block">
+            Our Trusted <span className="relative z-10">Partners</span>
+          </h2>
+        </div>
 
-      {/* BOTTOM ROW */}
-      <motion.div
-        className="flex gap-6 "
-        animate={{ x: ["-50%", "0%"] }}
-        transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-      >
-        {[...logos, ...logos].map((src, i) => (
-          <div
-            key={`row2-${i}`}
-            className="flex-shrink-0 bg-gray-200 w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition"
-          >
-            <Image
-              src={src}
-              alt={`logo-${i}`}
-              width={128}
-              height={80}
-              className="object-contain mix-blend-multiply"
-            />
+        <div className="relative flex overflow-hidden py-5">
+          <div className={marqueeClasses} style={{ "--duration": `${speed}s` }}>
+            {[...clientLogos, ...clientLogos].map((logo, idx) => (
+              <img
+                key={idx}
+                src={logo}
+                alt={`Client Logo ${idx + 1}`}
+                className="h-24 w-auto mx-8 flex-shrink-0 filter grayscale hover:grayscale-0 transition duration-300"
+              />
+            ))}
           </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-};
-
-export default LogoMarquee;
+        </div>
+      </div>
+    );
+  }

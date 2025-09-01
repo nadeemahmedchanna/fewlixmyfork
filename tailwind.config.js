@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          green: '#69de37', // example light green
+          DEFAULT: '#69de37', // default brand color
+          green: '#69de37',
           blue: '#07093d',
-          DEFAULT: '#69de37', // your main brand color
         },
       },
     },

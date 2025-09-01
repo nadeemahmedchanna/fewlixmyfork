@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Logo Design",
+        "tagline": "Unique and memorable logos to elevate your brand.",
+        "image": "/services/logo-design.jpg",
+        "link": "/services/logo-design",
+        "slug": "logo-design"
+    },
+    {
+        "name": "Packing Label Design",
+        "tagline": "Eye-catching packaging labels that captivate customers.",
+        "image": "/services/packing-label.webp",
+        "link": "/services/packing-label-design",
+        "slug": "packing-label-design"
+    },
+    {
+        "name": "Signage design",
+        "tagline": "Bold and impactful signage to enhance your visibility.",
+        "image": "/services/sign-age.webp",
+        "link": "/services/signage-design",
+        "slug": "signage-design"
+    },
+    {
+        "name": "Social Media cover",
+        "tagline": "Engaging social media covers to boost your online presence.",
+        "image": "/services/social media cover.webp",
+        "link": "/services/social-media-cover",
+        "slug": "social-media-cover"
+
+    },
+    {
+        "name": "Social Media Post",
+        "tagline": "Creative social media posts to drive engagement.",
+        "image": "/services/social media post.webp",
+        "link": "/services/social-media-post",
+        "slug": "social-media-post"
+    },
+    {
+        "name": "Trade Show Booth Design",
+        "tagline": "Attractive trade show booth designs to draw in crowds.",
+        "image": "/services/trade-show-booth.webp",
+        "link": "/services/trade-show-booth-design",
+        "slug": "trade-show-booth-design"
+    }
+]

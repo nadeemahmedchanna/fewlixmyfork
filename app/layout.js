@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import CursorFollower from "./components/CursorFollower";
+import SmoothScroll from "./components/SmoothScroll";
+import Footer from "./components/Footer";
 
 
 export const metadata = {
@@ -15,9 +17,13 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
+        <SmoothScroll>
+
         <CursorFollower/>
         <Header />
         {children}
+        </SmoothScroll>
+        <Footer />
       </body>
     </html>
   );
