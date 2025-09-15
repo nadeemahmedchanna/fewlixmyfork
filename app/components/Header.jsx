@@ -35,7 +35,7 @@ export default function Header() {
               className="flex-shrink-0"
             >
 <img
-  src="/Vertical Full Color logo.svg"
+  src=" Vertical Full Color logo.svg"
   alt="Fewlix"
   className="object-contain cursor-pointer max-h-10 w-auto"
   width={120}

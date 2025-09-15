@@ -12,6 +12,7 @@
     "@material-tailwind/react": "^2.1.10",
     "@radix-ui/react-accordion": "^1.2.12",
     "@studio-freight/lenis": "^1.0.42",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dicons": "^1.1.7",
     "flowbite": "^3.1.2",

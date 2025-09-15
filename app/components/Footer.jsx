@@ -4,8 +4,6 @@ import {
   Github,
   Instagram,
   Mail,
-  MapPin,
-  Phone,
   Twitter,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -26,23 +24,15 @@ const data = {
     history: '/company-history',
     team: '/meet-the-team',
     handbook: '/employee-handbook',
-    careers: '/careers',
-  },
-  help: {
-    faqs: '/faqs',
-    support: '/support',
-    livechat: '/live-chat',
   },
   contact: {
-    email: 'hello@mvpblocks.com',
-    phone: '+91 8637373116',
-    address: 'Kolkata, West Bengal, India',
+    email: 'info@fewlix.com',
   },
   company: {
-    name: 'Mvpblocks',
+    name: 'Fewlix',
     description:
-      'Building beautiful and functional web experiences with modern technologies. We help startups and businesses create their digital presence.',
-    logo: '/logo.webp',
+      'We are a team of passionate individuals dedicated to delivering top-notch web solutions that drive success for our clients.',
+    logo: '',
   },
 };
 
@@ -58,26 +48,19 @@ const aboutLinks = [
   { text: 'Company History', href: data.about.history },
   { text: 'Meet the Team', href: data.about.team },
   { text: 'Employee Handbook', href: data.about.handbook },
-  { text: 'Careers', href: data.about.careers },
 ];
 
 const serviceLinks = [
-  { text: 'Web Development', href: data.services.webdev },
-  { text: 'Web Design', href: data.services.webdesign },
-  { text: 'Marketing', href: data.services.marketing },
-  { text: 'Google Ads', href: data.services.googleads },
-];
-
-const helpfulLinks = [
-  { text: 'FAQs', href: data.help.faqs },
-  { text: 'Support', href: data.help.support },
-  { text: 'Live Chat', href: data.help.livechat, hasIndicator: true },
+  { text: 'Logo Design', href: "/services/logo-design" },
+  { text: 'Packing Label Design', href:"/services/packing-label-design" },
+  { text: 'Signage Design', href: "/services/signage-design" },
+  { text: 'Social Media Cover', href:"/services/social-media-cover" },
+  { text: 'Social Media Post', href:"/services/social-media-post" },
+  { text: 'Trade Show Booth Design', href:"/services/trade-show-booth-design" },
 ];
 
 const contactInfo = [
   { icon: Mail, text: data.contact.email },
-  { icon: Phone, text: data.contact.phone },
-  { icon: MapPin, text: data.contact.address, isAddress: true },
 ];
 
 export default function Footer4Col() {
@@ -87,11 +70,6 @@ export default function Footer4Col() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="text-white flex justify-center gap-2 sm:justify-start">
-              <img
-                src={data.company.logo || '/placeholder.svg'}
-                alt="logo"
-                className="h-8 w-8 rounded-full"
-              />
               <span className="text-2xl font-semibold">
                 {data.company.name}
               </span>
@@ -116,12 +94,12 @@ export default function Footer4Col() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">About Us</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {aboutLinks.map(({ text, href }) => (
-                  <li key={text}>
+                {aboutLinks.map(({ text, href }, index) => (
+                  <li key={index}>
                     <a
                       className="text-gray-400 transition"
                       href={href}
@@ -136,8 +114,8 @@ export default function Footer4Col() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Our Services</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {serviceLinks.map(({ text, href }) => (
-                  <li key={text}>
+                {serviceLinks.map(({ text, href }, index) => (
+                  <li key={index}>
                     <a
                       className="text-gray-400 transition"
                       href={href}
@@ -150,52 +128,18 @@ export default function Footer4Col() {
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">Helpful Links</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {helpfulLinks.map(({ text, href, hasIndicator }) => (
-                  <li key={text}>
-                    <a
-                      href={href}
-                      className={`${
-                        hasIndicator
-                          ? 'group flex justify-center gap-1.5 sm:justify-start'
-                          : 'text-gray-400 transition'
-                      }`}
-                    >
-                      <span className="text-gray-400 transition">
-                        {text}
-                      </span>
-                      {hasIndicator && (
-                        <span className="relative flex size-2">
-                          <span className="bg-white absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-                          <span className="bg-white relative inline-flex size-2 rounded-full" />
-                        </span>
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Contact Us</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {contactInfo.map(({ icon: Icon, text, isAddress }) => (
-                  <li key={text}>
+                {contactInfo.map(({ icon: Icon, text }, index) => (
+                  <li key={index}>
                     <a
                       className="flex items-center justify-center gap-1.5 sm:justify-start"
-                      href="#"
+                      href={`mailto:${text}`}
                     >
                       <Icon className="text-white size-5 shrink-0 shadow-sm" />
-                      {isAddress ? (
-                        <address className="text-gray-400 -mt-0.5 flex-1 not-italic transition">
-                          {text}
-                        </address>
-                      ) : (
-                        <span className="text-gray-400 flex-1 transition">
-                          {text}
-                        </span>
-                      )}
+                      <span className="text-gray-400 flex-1 transition">
+                        {text}
+                      </span>
                     </a>
                   </li>
                 ))}

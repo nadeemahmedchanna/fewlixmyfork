@@ -54,3 +54,24 @@ body {
   .animate-marquee-reverse { animation: marquee-reverse var(--duration) linear infinite; }
   .animate-draw-chalk { animation: draw-chalk 3s linear infinite; }
 }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused !important;
+}

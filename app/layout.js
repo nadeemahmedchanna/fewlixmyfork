@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import CursorFollower from "./components/CursorFollower";
 import SmoothScroll from "./components/SmoothScroll";
 import Footer from "./components/Footer";
+import FloatingChatButton from "./components/FloatingButton";
 
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         </SmoothScroll>
+        <FloatingChatButton />
         <Footer />
       </body>
     </html>

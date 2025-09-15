@@ -1,45 +1,178 @@
 [
-    {
-        "name": "Logo Design",
-        "tagline": "Unique and memorable logos to elevate your brand.",
-        "image": "/services/logo-design.jpg",
-        "link": "/services/logo-design",
-        "slug": "logo-design"
-    },
-    {
-        "name": "Packing Label Design",
-        "tagline": "Eye-catching packaging labels that captivate customers.",
-        "image": "/services/packing-label.webp",
-        "link": "/services/packing-label-design",
-        "slug": "packing-label-design"
-    },
-    {
-        "name": "Signage design",
-        "tagline": "Bold and impactful signage to enhance your visibility.",
-        "image": "/services/sign-age.webp",
-        "link": "/services/signage-design",
-        "slug": "signage-design"
-    },
-    {
-        "name": "Social Media cover",
-        "tagline": "Engaging social media covers to boost your online presence.",
-        "image": "/services/social media cover.webp",
-        "link": "/services/social-media-cover",
-        "slug": "social-media-cover"
-
-    },
-    {
-        "name": "Social Media Post",
-        "tagline": "Creative social media posts to drive engagement.",
-        "image": "/services/social media post.webp",
-        "link": "/services/social-media-post",
-        "slug": "social-media-post"
-    },
-    {
-        "name": "Trade Show Booth Design",
-        "tagline": "Attractive trade show booth designs to draw in crowds.",
-        "image": "/services/trade-show-booth.webp",
-        "link": "/services/trade-show-booth-design",
-        "slug": "trade-show-booth-design"
-    }
+  {
+    "name": "Logo Design",
+    "tagline": "Unique and memorable logos to elevate your brand.",
+    "image": "/services/logo-design.jpg",
+    "link": "/services/logo-design",
+    "slug": "logo-design",
+    "servicePageHeading": "Make your mark unforgettable with a logo that tells your story.",
+    "subHeading": "We craft logos that reflect your vision and connect deeply with your audience.",
+    "points": [
+      "Custom-designed logos tailored to your brand identity",
+      "Timeless designs that stay relevant and memorable",
+      "Scalable files for use across all platforms and media"
+    ],
+    "images":[
+        "/logo Design/Slides Healthy Hugs/Healthy Hugs-02.jpg",
+        "/logo Design/Slides Plushy Plays/2.jpg",
+        "/clients/1.svg",
+        "/clients/2.svg",
+        "/clients/3.svg",
+        "/clients/4.svg"
+    ]
+  },
+  {
+    "name": "Packing Label Design",
+    "tagline": "Eye-catching packaging labels that captivate customers.",
+    "image": "/services/packing-label.webp",
+    "link": "/services/packing-label-design",
+    "slug": "packing-label-design",
+    "servicePageHeading": "Win customers’ hearts before they even open the box.",
+    "subHeading": "Our designs blend creativity with strategy to make your products stand out on every shelf.",
+    "points": [
+      "Creative label designs that attract instant attention",
+      "Optimized for printing and packaging standards",
+      "Designs that balance aesthetics with clear product info"
+    ],
+    "images":[
+        "/Packiging label design/1.webp",
+        "/Packiging label design/2.webp",
+        "/Packiging label design/3.webp",
+        "/Packiging label design/4.webp",
+        "/Packiging label design/5.webp",
+        "/Packiging label design/6.webp",
+        "/Packiging label design/7.webp",
+        "/Packiging label design/8.webp",
+        "/Packiging label design/9.webp",
+        "/Packiging label design/10.webp",
+        "/Packiging label design/11.webp",
+        "/Packiging label design/12.webp",
+        "/Packiging label design/13.webp",
+        "/Packiging label design/14.webp",
+        "/Packiging label design/15.webp",
+        "/Packiging label design/16.webp",
+        "/Packiging label design/17.webp",
+        "/Packiging label design/18.webp"
+    ]   
+  },
+  {
+    "name": "Signage design",
+    "tagline": "Bold and impactful signage to enhance your visibility.",
+    "image": "/services/sign-age.webp",
+    "link": "/services/signage-design",
+    "slug": "signage-design",
+    "servicePageHeading": "Make your message impossible to miss with standout signage.",
+    "subHeading": "We design signage that captures attention and communicates your brand clearly, from afar or up close.",
+    "points": [
+      "High-visibility designs that capture attention from afar",
+      "Adaptable for indoor and outdoor use",
+      "Brand-focused layouts that strengthen recognition"
+    ],
+    "images":[
+        "/Signage design/1.webp",
+        "/Signage design/2.webp",
+        "/Signage design/3.webp",
+        "/Signage design/4.webp",
+        "/Signage design/5.webp",
+        "/Signage design/6.webp",
+        "/Signage design/7.webp"
+    ]
+  },
+  {
+    "name": "Social Media Cover",
+    "tagline": "Engaging social media covers to boost your online presence.",
+    "image": "/services/social media cover.webp",
+    "link": "/services/social-media-cover",
+    "slug": "social-media-cover",
+    "servicePageHeading": "Turn profile views into brand believers with stunning covers.",
+    "subHeading": "We design covers that instantly grab attention and give your brand a professional, polished look.",
+    "points": [
+      "Eye-catching cover designs for all major platforms",
+      "Optimized for both desktop and mobile displays",
+      "Consistent branding that elevates your online presence"
+    ],
+    "images":[
+        "/Social media Cover/1.webp",
+        "/Social media Cover/2.webp",
+        "/Social media Cover/3.webp",
+        "/Social media Cover/4.webp",
+        "/Social media Cover/5.webp",
+        "/Social media Cover/6.webp",
+        "/Social media Cover/7.webp",
+        "/Social media Cover/8.webp",
+        "/Social media Cover/9.webp"
+    ]
+  },
+  {
+    "name": "Social Media Post",
+    "tagline": "Creative social media posts to drive engagement.",
+    "image": "/services/social media post.webp",
+    "link": "/services/social-media-post",
+    "slug": "social-media-post",
+    "servicePageHeading": "Posts designed to engage, inspire, and convert.",
+    "subHeading": "Our posts are designed to match your brand voice, drive engagement, and grow loyal communities.",
+    "points": [
+      "Engaging visuals crafted to boost interaction",
+      "Custom templates that align with your brand voice",
+      "Content strategies to increase reach and visibility"
+    ],
+    "images":[
+        "/Social Media Post/2.webp",
+        "/Social Media Post/3.webp",
+        "/Social Media Post/4.webp",
+        "/Social Media Post/1.webp",
+        "/Social Media Post/5.webp",
+        "/Social Media Post/6.webp",
+        "/Social Media Post/7.webp",
+        "/Social Media Post/8.webp"
+    ]
+  },
+  {
+    "name": "Trade Show Booth Design",
+    "tagline": "Attractive trade show booth designs to draw in crowds.",
+    "image": "/services/trade-show-booth.webp",
+    "link": "/services/trade-show-booth-design",
+    "slug": "trade-show-booth-design",
+    "servicePageHeading": "Steal the show with a booth that draws the crowd in.",
+    "subHeading": "We create booths that combine visual impact with smart layouts, making your brand the center of attention.",
+    "points": [
+      "Custom booth layouts that fit your brand and space",
+      "Attention-grabbing visuals to attract visitors",
+      "Practical designs that blend creativity with usability"
+    ],
+    "images":[
+        "/Trade Show Booth/1.webp",
+        "/Trade Show Booth/2.webp",
+        "/Trade Show Booth/3.webp",
+        "/Trade Show Booth/4.webp",
+        "/Trade Show Booth/5.webp",
+        "/Trade Show Booth/6.webp",
+        "/Trade Show Booth/7.webp",
+        "/Trade Show Booth/8.webp",
+        "/Trade Show Booth/9.webp",
+        "/Trade Show Booth/10.webp",
+        "/Trade Show Booth/11.webp",
+        "/Trade Show Booth/12.webp",
+        "/Trade Show Booth/13.webp",
+        "/Trade Show Booth/14.webp",
+        "/Trade Show Booth/15.webp",
+        "/Trade Show Booth/16.webp",
+        "/Trade Show Booth/17.webp",
+        "/Trade Show Booth/18.webp",
+        "/Trade Show Booth/19.webp",
+        "/Trade Show Booth/20.webp",
+        "/Trade Show Booth/21.webp",
+        "/Trade Show Booth/22.webp",
+        "/Trade Show Booth/23.webp",
+        "/Trade Show Booth/24.webp",
+        "/Trade Show Booth/25.webp",
+        "/Trade Show Booth/26.webp",
+        "/Trade Show Booth/27.webp",
+        "/Trade Show Booth/28.webp",
+        "/Trade Show Booth/29.webp",
+        "/Trade Show Booth/30.webp",
+        "/Trade Show Booth/31.webp",
+        "/Trade Show Booth/32.webp"
+    ]
+  }
 ]
